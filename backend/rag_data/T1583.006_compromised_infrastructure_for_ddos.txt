@@ -1,0 +1,23 @@
+Technique ID: T1583.006
+Name: Compromise Infrastructure — Botnet for DDoS
+
+Description:
+Attackers compromise remote systems to build botnets used for large‑scale DDoS attacks.
+
+How it works:
+- Malware infects hosts (IoT, PCs, servers).
+- Bots receive commands from C2 to launch floods.
+
+IOC:
+- Outbound connections to known botnet C2 servers.
+- Devices sending high‑volume unsolicited traffic.
+- Unexpected processes running on IoT devices.
+
+Log Sources:
+- IDS/IPS
+- Firewall logs
+- EDR (for infected endpoints)
+
+Detection:
+- Detect communication with known botnet C2 IPs.
+- Monitor devices for abnormal traffic patterns.

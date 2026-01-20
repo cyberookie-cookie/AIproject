@@ -1,0 +1,28 @@
+Technique ID: T1105
+Name: Ingress Tool Transfer (Remote File Transfer)
+
+Description:
+Attackers transfer files from an external system onto a compromised machine.  
+This is commonly used to deliver malware, upload tools (Mimikatz, netcat), or download stolen data.
+
+How it works:
+- Attacker uses PowerShell to download a file (Invoke-WebRequest, curl).
+- Malware retrieves payloads from a remote server.
+- Tools like SCP, FTP, SMB, or custom C2 channels transfer files.
+
+IOC:
+- PowerShell commands with download URLs.
+- Processes connecting to suspicious external IPs.
+- Files created in temp directories after web requests.
+- Unusual outbound traffic spikes.
+
+Log Sources:
+- Sysmon (Event ID 3: network connection, Event ID 1: process creation)
+- Windows Event Logs
+- Firewall logs
+- Proxy/web gateway logs
+
+Detection:
+- Alert on PowerShell downloading files via HTTP/HTTPS.
+- Detect unknown executables written to temp or user directories.
+- Flag connections to known malicious file-hosting servers.

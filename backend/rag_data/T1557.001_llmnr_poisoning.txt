@@ -1,0 +1,24 @@
+Technique ID: T1557.001
+Name: LLMNR/NBT-NS Poisoning
+
+Description:
+Attacker intercepts name resolution requests and responds maliciously to steal credentials.
+
+How it works:
+- Listens for LLMNR or NBT-NS broadcasts.
+- Sends fake replies redirecting victim to attacker.
+- Captures NTLM hashes.
+
+IOC:
+- LLMNR or NBT-NS traffic spikes.
+- Unexpected network responder.
+- NTLM authentication attempts to unknown hosts.
+
+Log Sources:
+- Network IDS logs
+- Windows Defender logs
+- Sysmon network events
+
+Detection:
+- Alert on LLMNR traffic (should be rare).
+- Detect tools like Responder or Inveigh.

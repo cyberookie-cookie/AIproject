@@ -1,0 +1,22 @@
+Technique ID: T1548.002
+Name: Setuid/Setgid Privilege Escalation
+
+Description:
+Attackers exploit binaries with setuid root to run commands as root.
+
+How it works:
+- Attacker locates binaries with setuid bit.
+- Executes them to gain elevated privileges.
+
+IOC:
+- New or modified setuid binaries.
+- Excessive file permission changes.
+- Execution of unusual setuid programs.
+
+Log Sources:
+- Linux file integrity logs
+- Auditd logs
+
+Detection:
+- Monitor for creation of new setuid files.
+- Alert on suspicious chmod/chown activity.

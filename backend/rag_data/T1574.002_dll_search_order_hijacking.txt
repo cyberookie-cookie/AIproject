@@ -1,0 +1,23 @@
+Technique ID: T1574.002
+Name: DLL Search Order Hijacking
+
+Description:
+Attackers place a malicious DLL in a location the system loads before the legitimate one.
+
+How it works:
+- Drop malicious DLL with same name as legitimate.
+- OS loads attacker’s DLL first due to search order.
+
+IOC:
+- Unexpected DLLs in application directories.
+- Processes loading DLLs from non-standard paths.
+- Sysmon Event ID 7 (DLL loaded).
+
+Log Sources:
+- Sysmon
+- Windows Event Logs
+- EDR logs
+
+Detection:
+- Monitor DLL load paths.
+- Look for unsigned or unusual DLLs loaded by trusted apps.

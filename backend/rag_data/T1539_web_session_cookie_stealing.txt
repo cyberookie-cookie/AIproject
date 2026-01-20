@@ -1,0 +1,22 @@
+Technique ID: T1539
+Name: Steal Web Session Cookie
+
+Description:
+Attackers steal session cookies via XSS, sniffing, or malware to hijack accounts.
+
+How it works:
+- Inject JavaScript that reads document.cookie.
+- Intercept cookies over insecure connections.
+
+IOC:
+- Requests with stolen session IDs.
+- Cookies accessed by unauthorized scripts.
+- Multiple logins from different locations.
+
+Log Sources:
+- Web authentication logs
+- Browser CSP reports
+
+Detection:
+- Enable HTTPOnly cookies.
+- Detect suspicious session reuse.

@@ -1,0 +1,22 @@
+Technique ID: T1548.001
+Name: Sudo Privilege Abuse
+
+Description:
+Attacker abuses sudo permissions to escalate privileges on Linux systems.
+
+How it works:
+- Misconfigured sudo rules allow broad commands.
+- 'sudo -l' reveals exploitable permissions.
+
+IOC:
+- Non-root users executing admin commands.
+- Sudo failures followed by successful uses.
+- Modification of /etc/sudoers.
+
+Log Sources:
+- /var/log/auth.log
+- Linux audit logs
+
+Detection:
+- Alert on new sudo permissions.
+- Monitor abnormal sudo command usage.

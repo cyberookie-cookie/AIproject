@@ -1,0 +1,23 @@
+Technique ID: T1595.002
+Name: Active Scanning – Vulnerability Scanning of Public Applications
+
+Description:
+Attackers scan public-facing websites or APIs for vulnerabilities.
+
+How it works:
+- Automated tools send various payloads.
+- Scan for SQLi, XSS, outdated plugins, admin panels.
+
+IOC:
+- Large number of requests from a single IP.
+- URL fuzzing (multiple 404 errors).
+- Scan signatures (Nikto, Dirb, Gobuster).
+
+Log Sources:
+- Apache/Nginx logs
+- WAF logs
+- Firewalls
+
+Detection:
+- Alert on excessive 404/403/500 errors.
+- Detect known scanning user-agents.

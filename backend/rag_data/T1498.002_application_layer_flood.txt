@@ -1,0 +1,23 @@
+Technique ID: T1498.002
+Name: Application Layer Flood
+
+Description:
+Attackers overload the web server or application using HTTP floods, slowloris, or API flooding.
+
+How it works:
+- Bots send thousands of HTTP GET/POST requests.
+- Server threads become exhausted.
+
+IOC:
+- Many repeated requests to the same URL.
+- High number of incomplete HTTP sessions.
+- Spikes in CPU usage on the web server.
+
+Log Sources:
+- Web server logs (Apache, Nginx)
+- WAF logs
+- Load balancer metrics
+
+Detection:
+- Rate limiting alerts.
+- Behavior‑based anomaly detection.

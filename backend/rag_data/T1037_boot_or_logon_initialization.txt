@@ -1,0 +1,23 @@
+Technique ID: T1037
+Name: Boot or Logon Initialization Scripts
+
+Description:
+Attackers modify startup scripts to execute malicious code at boot or user login.
+
+How it works:
+- Edits .bashrc, .profile, Startup folder, Run keys.
+- Malware persists by launching each time the system starts.
+
+IOC:
+- Unauthorized modifications to startup scripts.
+- Suspicious programs running right after login.
+- New registry Run/RunOnce keys (Windows).
+
+Log Sources:
+- Windows Event Logs (Registry)
+- Sysmon Event ID 13 (Registry modification)
+- Linux file integrity monitoring
+
+Detection:
+- Alert on changes to startup scripts.
+- Monitor new autorun registry keys.

@@ -1,0 +1,23 @@
+Technique ID: T1056.003
+Name: Web Form Keylogging
+
+Description:
+Attackers inject JavaScript that captures keystrokes in login or payment forms.
+
+How it works:
+- Add event listeners to <input> fields.
+- Keystrokes are sent to attacker's server.
+
+IOC:
+- Unknown JavaScript modifying form fields.
+- New event listeners on sensitive inputs.
+- External domains receiving keystroke data.
+
+Log Sources:
+- Web server logs
+- Browser devtools logs
+- WAF logs
+
+Detection:
+- Monitor DOM changes.
+- Use CSP + SRI to block untrusted scripts.

@@ -1,0 +1,23 @@
+Technique ID: T1055.001
+Name: Process Injection — DLL Injection
+
+Description:
+Attackers inject malicious DLLs into legitimate processes to evade detection.
+
+How it works:
+- Attacker uses techniques like CreateRemoteThread.
+- Target process executes malicious code.
+
+IOC:
+- Suspicious handle access to remote processes.
+- Injections into lsass.exe, svchost.exe, explorer.exe.
+- Sysmon Event ID 10 (process access).
+
+Log Sources:
+- Sysmon
+- Windows Event Logs
+- EDR detections
+
+Detection:
+- Monitor DLL loads into sensitive processes.
+- Detect CreateRemoteThread or similar APIs.

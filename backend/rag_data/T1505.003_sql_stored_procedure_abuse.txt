@@ -1,0 +1,25 @@
+Technique ID: T1505.003
+Name: SQL Stored Procedure Abuse
+
+Description:
+Attackers use or modify stored procedures to execute malicious SQL code.
+
+How it works:
+- Access gained to SQL server.
+- Attacker creates or alters stored procedures.
+- Executes commands or escalates privileges via SQL.
+
+IOC:
+- Unexpected stored procedure modifications.
+- SQL errors associated with elevated permissions.
+- Admin accounts performing unusual operations.
+
+Log Sources:
+- SQL server audit logs
+- Database transaction logs
+- Application logs
+
+Detection:
+- Monitor changes to stored procedures.
+- Alert on privileged SQL operations.
+- Look for suspicious SQL from web applications.

@@ -1,0 +1,23 @@
+Technique ID: T1059.003
+Name: PowerShell Execution
+
+Description:
+Attackers use PowerShell to execute commands, scripts, and download payloads.
+
+How it works:
+- Executes encoded PowerShell commands.
+- Used for recon, malware execution, privilege escalation.
+
+IOC:
+- Base64-encoded PowerShell commands.
+- Suspicious child processes launched by PowerShell.
+- Download commands like Invoke-WebRequest.
+
+Log Sources:
+- Windows PowerShell logs (Event IDs: 4103, 4104)
+- Sysmon (Event ID 1)
+- Windows Event ID 4688 (process creation)
+
+Detection:
+- Alert on encoded commands.
+- Detect PowerShell spawning unusual processes.

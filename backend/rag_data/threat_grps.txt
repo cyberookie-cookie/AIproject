@@ -1,0 +1,91 @@
+Threat Actor: Earth Lusca
+Origin: China
+Active Since: 2019
+Overview: Earth Lusca is a suspected China-based cyber espionage group targeting institutions worldwide, including government agencies, media, educational institutions, COVID-19 research organizations, telecom companies, and banned religious groups. Some operations appear financially motivated. Known for watering hole attacks using injected JavaScript.
+Techniques:
+- T1059.007 – Command and Scripting Interpreter: JavaScript
+  - Injected malicious JavaScript into compromised websites for watering hole attacks
+
+Threat Actor: APT28
+Origin: Russia
+Attributed To: GRU Unit 26165
+Active Since: 2004
+Overview: APT28 is a Russian state-sponsored group using brute-force methods to gain access to accounts. Known for credential brute forcing, password spraying, and adaptive infrastructure to bypass geo-based restrictions.
+Techniques:
+- T1110 – Brute Force
+  - Password guessing at ~300 attempts/hour per account using custom tools
+  - Used Kubernetes clusters for distributed brute forcing
+- T1110.003 – Password Spraying
+  - Low-frequency login attempts (~4/hour) to avoid lockouts
+  - Large-scale spraying in the “Nearest Neighbor” campaign
+
+Threat Actor: OilRig
+Origin: Iran
+Active Since: 2014
+Overview: OilRig is an Iranian state-sponsored group focused on credential harvesting and supply-chain attacks. Targets include finance, government, energy, chemical, and telecommunications sectors.
+Techniques:
+- T1003 – OS Credential Dumping
+  - Dumped cached domain credentials and Kerberos tickets
+- T1552 – Unsecured Credentials
+  - Queried and abused Windows registry for stored credentials
+- T1555 – Credentials from Password Stores
+  - Used LaZagne to steal browser credentials and Windows Credential Manager data
+  - Used PICKPOCKET to dump browser credentials
+
+Threat Actor: Kimsuky
+Origin: North Korea
+Active Since: 2012
+Overview: Kimsuky targets South Korea, the US, Russia, Europe, the UN, and experts in diplomacy and national security.
+Techniques:
+- T1557 – Network Sniffing
+  - Used modified PHProxy to intercept and analyze victim web traffic
+
+Threat Actor: Mustang Panda
+Origin: China
+Active Since: 2012
+Overview: Mustang Panda is known for spearphishing, tailored lures, and decoy documents. Targets include government, diplomatic, religious, NGO, and research institutions globally.
+Techniques:
+- T1059 – Malware Execution
+  - Used captive portal hijack to redirect victims to download malicious payloads
+
+Threat Actor: Agrius
+Origin: Iran
+Active Since: 2020
+Overview: Agrius is known for destructive wiper attacks, ransomware, and operations in the Middle East, especially Israel.
+Techniques:
+- T1119 – Automated Collection
+  - Used sql.net4.exe to query SQL databases and extract PII automatically
+- T1190 – Exploit Public-Facing Application
+  - Exploited CVE-2018-13379 in FortiOS
+  - Performed SQL injection attacks
+
+Threat Actor: Dragonfly
+Origin: Russia
+Attributed To: FSB Center 16
+Active Since: 2010
+Overview: Dragonfly targets defense, aviation, energy, and ICS sectors using supply-chain compromise, spearphishing, and drive-by attacks.
+Techniques:
+- T1190 – Exploit Public-Facing Application
+  - SQL injection attacks
+  - Exploited Citrix (CVE-2019-19781), Exchange (CVE-2020-0688), and Fortinet (CVE-2018-13379)
+- T1554 – Compromise Software Supply Chain
+  - Placed trojanized ICS installers on legitimate vendor sites
+
+Threat Actor: HAFNIUM
+Origin: China
+Active Since: 2021
+Overview: HAFNIUM exploits edge devices, cloud services, and remote management tools. Targets include US research, legal, defense, and education.
+Techniques:
+- T1078 – Valid Accounts
+  - Manipulated accounts by elevating privileges and resetting default admin passwords
+- T1068 – Exploitation for Privilege Escalation
+  - Exploited vulnerable applications for deeper access
+
+Threat Actor: Sandworm Team
+Origin: Russia
+Attributed To: GRU Unit 74455
+Active Since: 2009
+Overview: Sandworm is responsible for destructive attacks on governments and critical infrastructure, including large-scale outages.
+Techniques:
+- T1499 – Endpoint Denial of Service
+  - Disrupted Georgian government and private-sector sites after compromising a hosting provider in 2019

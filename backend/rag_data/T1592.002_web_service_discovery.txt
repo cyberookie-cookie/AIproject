@@ -1,0 +1,22 @@
+Technique ID: T1592.002
+Name: Web Service Discovery
+
+Description:
+Attackers identify web services, hidden endpoints, APIs, and administration panels.
+
+How it works:
+- Perform directory brute forcing.
+- Enumerate APIs using tools like ffuf or gobuster.
+
+IOC:
+- Requests to non‑public endpoints.
+- Repeated 404/403 errors from same client.
+- API probing patterns.
+
+Log Sources:
+- Web server logs
+- WAF logs
+
+Detection:
+- Detect brute‑force scans on URLs.
+- Block repeated enumeration attempts.

@@ -1,0 +1,24 @@
+Technique ID: T1557.003
+Name: DHCP Spoofing
+
+Description:
+An attacker impersonates a DHCP server to distribute malicious network configurations.
+
+How it works:
+- Attacker sends fake DHCP Offers.
+- Victim receives malicious gateway/DNS IP.
+- Traffic is redirected to attacker (“rogue DHCP”).
+
+IOC:
+- Multiple DHCP servers detected on same network.
+- Devices receiving unusual gateway or DNS settings.
+- Sudden loss of connectivity.
+
+Log Sources:
+- DHCP server logs
+- Network IDS logs
+- Endpoint logs showing new IP config
+
+Detection:
+- Monitor for rogue DHCP servers.
+- Alert on conflicting DHCP offers.

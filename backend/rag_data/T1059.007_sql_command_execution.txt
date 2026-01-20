@@ -1,0 +1,25 @@
+Technique ID: T1059.007
+Name: SQL Command Execution
+
+Description:
+Attackers inject SQL commands into vulnerable input fields to execute actions on the database.
+
+How it works:
+- Sends SQL payloads like `' OR 1=1 --` or `UNION SELECT`.
+- Bypasses authentication or dumps data.
+- May lead to RCE if DB interaction allows command execution.
+
+IOC:
+- Requests containing SQL keywords (SELECT, UNION, DROP).
+- Repeated database errors.
+- Login bypass attempts.
+
+Log Sources:
+- Web server access logs
+- Application logs
+- Database logs
+
+Detection:
+- Identify suspicious SQL payloads.
+- Correlate multiple failed SQL queries.
+- Use WAF signatures to detect SQLi.

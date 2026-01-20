@@ -1,0 +1,23 @@
+Technique ID: T1059.008
+Name: JavaScript Execution
+
+Description:
+Attackers execute malicious JavaScript inside the victim’s browser, often through XSS payloads.
+
+How it works:
+- Inject script tags into vulnerable forms or URLs.
+- Attacker code runs in the victim’s browser.
+
+IOC:
+- Suspicious inline or obfuscated JavaScript.
+- DOM modifications from unknown sources.
+- Unexpected external script URLs.
+
+Log Sources:
+- Web server logs
+- Browser console logs
+- WAF logs
+
+Detection:
+- Enable CSP violation reports.
+- Detect scripts injected into parameters.

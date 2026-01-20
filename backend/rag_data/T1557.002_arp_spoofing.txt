@@ -1,0 +1,25 @@
+Technique ID: T1557.002
+Name: ARP Spoofing / ARP Poisoning
+
+Description:
+The attacker sends forged ARP responses to redirect network traffic through their machine.
+
+How it works:
+- Sends fake ARP replies claiming “I am the gateway”.
+- Victim updates ARP table incorrectly.
+- Attacker intercepts, modifies, or relays traffic.
+
+IOC:
+- ARP cache contains duplicate or incorrect MAC addresses.
+- Multiple ARP replies with mismatched source information.
+- Unusual network latency.
+
+Log Sources:
+- Network IDS/IPS logs
+- ARP monitoring tools
+- Sysmon network events (if configured)
+
+Detection:
+- Alert when multiple ARP replies conflict.
+- Monitor ARP table changes.
+- Detect common tools such as arpspoof, ettercap.

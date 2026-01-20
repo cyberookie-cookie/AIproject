@@ -1,0 +1,22 @@
+Technique ID: T1589.002
+Name: Gather Victim Identity Information — Web User IDs
+
+Description:
+Attackers gather usernames, emails, or identifiers through enumeration or XSS.
+
+How it works:
+- Enumerate user profiles.
+- Extract IDs via HTML scraping or injected scripts.
+
+IOC:
+- Large number of profile requests.
+- Automated scraping behavior.
+- Unexpected API queries for user lists.
+
+Log Sources:
+- Web server logs
+- API gateway logs
+
+Detection:
+- Rate‑limit identity‑related endpoints.
+- Detect abnormal enumeration attempts.

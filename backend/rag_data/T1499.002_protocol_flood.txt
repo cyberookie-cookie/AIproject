@@ -1,0 +1,23 @@
+Technique ID: T1499.002
+Name: Protocol Flood
+
+Description:
+Attackers abuse a specific protocol (DNS, NTP, SSDP, LDAP) to overwhelm the target.
+
+How it works:
+- Reflection/amplification attacks using open resolvers.
+- Small attacker request → large reflected response.
+
+IOC:
+- Large volumes of DNS, NTP, or SSDP traffic.
+- Requests from unusual or spoofed IPs.
+- Traffic amplification patterns.
+
+Log Sources:
+- DNS server logs
+- Firewall logs
+- DDoS monitoring tools
+
+Detection:
+- Monitor unusual protocol spikes.
+- Detect reflection/amplification indicators.

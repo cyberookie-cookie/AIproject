@@ -1,0 +1,24 @@
+Technique ID: T1499.001
+Name: Network DoS — Direct Network Flooding
+
+Description:
+Attackers flood the victim’s network with a high volume of packets
+(UDP flood, SYN flood, ICMP flood) to exhaust bandwidth and interrupt service.
+
+How it works:
+- Massive bursts of packets sent from bots or spoofed IPs.
+- Network devices become saturated and stop responding.
+
+IOC:
+- Extremely high inbound traffic.
+- Many packets with spoofed source IPs.
+- Sudden drop in legitimate connections.
+
+Log Sources:
+- Firewall logs
+- Netflow / PCAP
+- IDS/IPS systems
+
+Detection:
+- Detect abnormal spikes in traffic.
+- Identify repeated SYN, UDP, or ICMP requests.
